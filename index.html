@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AS Academics — Excellence in Education</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/courses-teachers.css" />
+    <link rel="stylesheet" href="./css/events.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+
+    <!-- Inline: set theme BEFORE paint to avoid flash -->
+    <script>
+      (function () {
+        const t = localStorage.getItem("asa-theme") || "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <div class="logo" onclick="showPage('home')">
+          <div class="logo-mark"><i class="fa-solid fa-book-open"></i></div>
+          <div>
+            AS Academics
+            <span class="logo-tagline">Excellence in Education</span>
+          </div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a class="active" data-page="home">Home</a></li>
+          <li><a data-page="courses">Courses</a></li>
+          <li><a data-page="teachers">Teachers</a></li>
+          <li><a data-page="events">Events</a></li>
+          <li><a data-page="contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            title="Toggle dark / light mode"
+            aria-label="Toggle theme"
+          >
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+          </button>
+          <button class="nav-cta" onclick="showPage('courses')">
+            Enroll Now
+          </button>
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- home page -->
+    <div class="page active" id="page-home">
+      <!-- Hero Slider -->
+      <div class="hero-wrap">
+        <!-- Slide 1 -->
+        <div class="slide slide-1 active">
+          <div class="slide-bg"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">
+              Pakistan's Premier Learning Platform
+            </div>
+            <h1 class="slide-title">
+              Shape Your Future<br />with <span class="hl">Quality</span
+              ><br />Education
+            </h1>
+            <p class="slide-desc">
+              Gain certified, industry-ready skills from Pakistan's leading
+              instructors. Over 48,000 students have transformed their careers
+              with AS Academics.
+            </p>
+            <div class="slide-btns">
+              <button class="btn btn-primary" onclick="showPage('courses')">
+                <i class="fa-solid fa-graduation-cap"></i> Browse Courses
+              </button>
+              <button class="btn btn-outline" onclick="showPage('contact')">
+                <i class="fa-solid fa-phone"></i> Contact Us
+              </button>
+            </div>
+          </div>
+          <div class="slide-deco">
+            <div class="deco-card">
+              <div class="deco-num">48K+</div>
+              <div class="deco-lbl">Active Students</div>
+            </div>
+            <div class="deco-card">
+              <div class="deco-num">320+</div>
+              <div class="deco-lbl">Expert Faculty</div>
+            </div>
+            <div class="deco-card">
+              <div class="deco-num">98%</div>
+              <div class="deco-lbl">Success Rate</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide slide-2">
+          <div class="slide-bg"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">Technology &amp; Computing</div>
+            <h1 class="slide-title">
+              Code, Create &amp;<br /><span class="hl">Build</span>
+              the<br />Digital World
+            </h1>
+            <p class="slide-desc">
+              From web development to artificial intelligence — master the
+              skills reshaping every industry on the planet.
+            </p>
+            <div class="slide-btns">
+              <button class="btn btn-primary" onclick="showPage('courses')">
+                <i class="fa-solid fa-laptop-code"></i> Tech Courses
+              </button>
+              <button class="btn btn-outline" onclick="showPage('events')">
+                <i class="fa-regular fa-calendar"></i> View Events
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide slide-3">
+          <div class="slide-bg"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">Business &amp; Leadership</div>
+            <h1 class="slide-title">
+              Lead, Grow &amp;<br /><span class="hl">Excel</span> in Your<br />Career
+            </h1>
+            <p class="slide-desc">
+              Strategic thinking, financial acumen, and leadership skills — the
+              complete toolkit for every aspiring professional and entrepreneur.
+            </p>
+            <div class="slide-btns">
+              <button class="btn btn-primary" onclick="showPage('courses')">
+                <i class="fa-solid fa-briefcase"></i> Business Courses
+              </button>
+              <button class="btn btn-outline" onclick="showPage('teachers')">
+                <i class="fa-solid fa-users"></i> Our Faculty
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls" id="sliderDots"></div>
+        <button class="s-arrow prev" id="saPrev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="s-arrow next" id="saNext">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <!-- /hero-wrap -->
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-num" data-target="48000" data-suffix="+">0+</span>
+          <div class="stat-lbl">Students Enrolled</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="320" data-suffix="+">0+</span>
+          <div class="stat-lbl">Expert Instructors</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="1200" data-suffix="+">0+</span>
+          <div class="stat-lbl">Video Lessons</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="98" data-suffix="%">0%</span>
+          <div class="stat-lbl">Placement Rate</div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="section">
+        <div class="eyebrow">Why Choose AS Academics</div>
+        <h2 class="section-title">
+          Everything You Need to<br />Excel in Your Studies
+        </h2>
+        <p class="section-sub">
+          We have designed every aspect of our platform around one goal: your
+          success.
+        </p>
+        <div class="features-grid">
+          <div class="feat-card">
+            <div class="feat-ico"><i class="fa-solid fa-video"></i></div>
+            <h3 class="feat-title">High-Quality Video Lectures</h3>
+            <p class="feat-desc">
+              Professional HD recordings with downloadable materials. Watch at
+              your own pace, on any device, at any time.
+            </p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-ico"><i class="fa-solid fa-certificate"></i></div>
+            <h3 class="feat-title">Accredited Certificates</h3>
+            <p class="feat-desc">
+              Certificates recognised by 2,000+ employers across Pakistan and
+              internationally. Add them to LinkedIn in one click.
+            </p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-ico"><i class="fa-solid fa-comments"></i></div>
+            <h3 class="feat-title">Live Mentorship Sessions</h3>
+            <p class="feat-desc">
+              Weekly live Q&amp;A with your instructors. Get personalised
+              feedback and guidance in real time.
+            </p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-ico">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <h3 class="feat-title">Learn on Any Device</h3>
+            <p class="feat-desc">
+              Seamlessly switch between phone, tablet, and desktop. Your
+              progress syncs automatically everywhere.
+            </p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-ico"><i class="fa-solid fa-users"></i></div>
+            <h3 class="feat-title">Student Communities</h3>
+            <p class="feat-desc">
+              Join study groups, collaborate on projects, and grow together with
+              peers in your field of study.
+            </p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-ico"><i class="fa-solid fa-infinity"></i></div>
+            <h3 class="feat-title">Lifetime Course Access</h3>
+            <p class="feat-desc">
+              Pay once and access your course forever — including all future
+              updates at no additional cost.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- courses page -->
+    <div class="page" id="page-courses">
+      <div class="section">
+        <div class="eyebrow">Our Course Catalog</div>
+        <h2 class="section-title">
+          Explore 1,200+ Courses<br />Across Every Discipline
+        </h2>
+        <p class="section-sub">
+          Hover over any course to see what's inside. Filter by subject to find
+          your perfect programme.
+        </p>
+        <div class="filter-row">
+          <button class="f-btn active" data-filter="all">All Courses</button>
+          <button class="f-btn" data-filter="tech">Technology</button>
+          <button class="f-btn" data-filter="design">Design</button>
+          <button class="f-btn" data-filter="business">Business</button>
+          <button class="f-btn" data-filter="science">Science</button>
+        </div>
+        <div class="courses-grid" id="coursesGrid"></div>
+      </div>
+    </div>
+
+    <!-- Teacher page -->
+    <div class="page" id="page-teachers">
+      <div class="section">
+        <div class="eyebrow">Our Faculty</div>
+        <h2 class="section-title">
+          Learn From Qualified<br />Experts &amp; Academics
+        </h2>
+        <p class="section-sub">
+          Our instructors bring an average of 12 years of real-world and
+          academic experience to every lesson.
+        </p>
+        <div class="teachers-grid" id="teachersGrid"></div>
+      </div>
+    </div>
+
+    <!-- event page -->
+    <div class="page" id="page-events">
+      <div class="section">
+        <div class="eyebrow">Events Calendar</div>
+        <h2 class="section-title">Upcoming Events &amp;<br />Live Sessions</h2>
+        <p class="section-sub">
+          Browse scheduled events or add your own. Click a highlighted date to
+          view events.
+        </p>
+
+        <div class="events-wrap">
+          <!-- Calendar widget -->
+          <div>
+            <div class="cal-widget">
+              <div class="cal-hdr">
+                <button class="cal-nav-btn" id="calPrev">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <h3 id="calTitle"></h3>
+                <button class="cal-nav-btn" id="calNext">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="cal-days-row">
+                <span>Sun</span><span>Mon</span><span>Tue</span> <span>Wed</span
+                ><span>Thu</span><span>Fri</span><span>Sat</span>
+              </div>
+              <div class="cal-grid" id="calGrid"></div>
+              <button class="add-event-btn" onclick="openModal()">
+                <i class="fa-solid fa-plus"></i> Add New Event
+              </button>
+            </div>
+          </div>
+
+          <!-- Event List -->
+          <div class="ev-panel">
+            <div class="ev-panel-title">
+              <span id="evListTitle">All Upcoming Events</span>
+              <span class="ev-count" id="evCount"></span>
+            </div>
+            <div class="ev-list" id="evList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- contact page -->
+    <div class="page" id="page-contact">
+      <div class="section">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="section-title">We Are Here to Help<br />You Succeed</h2>
+        <p class="section-sub">
+          Our admissions and support team is available Monday to Saturday,
+          9am-6pm. We respond within 24 hours.
+        </p>
+
+        <div class="contact-grid">
+          <!-- Form -->
+          <div class="cf-wrap">
+            <div class="cf-title">Send Us a Message</div>
+            <div class="f-row">
+              <div class="fg">
+                <label>First Name</label
+                ><input type="text" placeholder="First Name" />
+              </div>
+              <div class="fg">
+                <label>Last Name</label><input type="text" placeholder="Last Name" />
+              </div>
+            </div>
+            <div class="fg">
+              <label>Email Address</label
+              ><input type="email" placeholder="abc@gmail.com" />
+            </div>
+            <div class="fg">
+              <label>Subject</label>
+              <select>
+                <option>Course Enquiry</option>
+                <option>Admission Information</option>
+                <option>Technical Support</option>
+                <option>Partnership</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>Your Message</label
+              ><textarea
+                placeholder="Tell us how we can assist you..."
+              ></textarea>
+            </div>
+            <button
+              class="btn btn-primary submit-btn"
+              id="submitBtn"
+              onclick="handleSubmit()"
+            >
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-success-msg" id="successMsg">
+              <i class="fa-solid fa-circle-check" style="font-size: 1.2rem"></i>
+              Message sent! We'll respond within 24 hours.
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="info-sidebar">
+            <div class="info-box">
+              <div class="info-ico">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4>Our Location</h4>
+                <p>
+                  Arfa Karim Software Technology Park<br />Ferozepur Road,
+                  Lahore, Punjab 54600<br />Pakistan
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-ico"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <p>+92 312 4567890<br />Mon-Sat, 9am-6pm</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-ico"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>info@asacademics.edu.pk<br />support@asacademics.edu.pk</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-ico"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <h4>Office Hours</h4>
+                <p>
+                  Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 9:00 AM -
+                  2:00 PM
+                </p>
+              </div>
+            </div>
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.1964882264!2d74.2839!3d31.5012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904e6c64b3b27%3A0xd8a29456c83e7f8e!2sArfa%20Software%20Technology%20Park!5e0!3m2!1sen!2spk!4v1700000000000"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-nl">
+        <div class="footer-nl-inner">
+          <div>
+            <h3>Stay Connected</h3>
+            <p>
+              Weekly course drops, event alerts, and career tips — straight to
+              your inbox.
+            </p>
+          </div>
+          <div class="nl-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              id="nlEmail"
+            />
+            <button onclick="handleNL()">
+              Subscribe <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="f-brand">
+            <div class="f-brand-name">
+              <div class="mark"><i class="fa-solid fa-book-open"></i></div>
+              AS Academics
+            </div>
+            <p>
+              Pakistan's trusted online learning platform, empowering 48,000+
+              students to build skills that matter and careers that last.
+            </p>
+            <div class="socials">
+              <a class="soc soc-fb" href="https://www.facebook.com/" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a class="soc soc-ig" href="https://www.instagram.com/" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a class="soc soc-yt" href="https://www.youtube.com/" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a class="soc soc-li" href="https://www.linkedin.com/" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a class="soc soc-tw" href="https://twitter.com/" aria-label="X / Twitter"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a class="soc soc-wa" href="https://wa.me/" aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a class="soc soc-tk" href="https://www.tiktok.com/" aria-label="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a class="soc soc-gh" href="https://github.com/" aria-label="GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Explore -->
+          <div class="f-col">
+            <h4>Explore</h4>
+            <ul>
+              <li>
+                <a onclick="showPage('courses')" href="javascript:void(0)"
+                  ><i class="fa-solid fa-angle-right"></i>All Courses</a
+                >
+              </li>
+              <li>
+                <a onclick="showPage('teachers')" href="javascript:void(0)"
+                  ><i class="fa-solid fa-angle-right"></i>Our Faculty</a
+                >
+              </li>
+              <li>
+                <a onclick="showPage('events')" href="javascript:void(0)"
+                  ><i class="fa-solid fa-angle-right"></i>Events</a
+                >
+              </li>
+              <li>
+                <a onclick="showPage('contact')" href="javascript:void(0)"
+                  ><i class="fa-solid fa-angle-right"></i>Contact</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-angle-right"></i>About Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Institution -->
+          <div class="f-col">
+            <h4>Institution</h4>
+            <ul>
+              
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Leadership</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Accreditation</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Career Centre</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Press &amp; Media</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-angle-right"></i>Partners</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Legal -->
+          <div class="f-col">
+            <h4>Support &amp; Legal</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Help Centre</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Refund Policy</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-angle-right"></i>Cookie Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2025 AS Academics. All rights reserved. Arfa Karim Software
+            Technology Park, Lahore, Pakistan.
+          </p>
+          <div class="footer-badges">
+            <span class="footer-badge">HEC Registered</span>
+            <span class="footer-badge">ISO Certified</span>
+            <span class="footer-badge">PEC Approved</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="btt"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="Back to top"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- add event model -->
+    <div
+      class="modal-overlay"
+      id="modalOverlay"
+      onclick="closeModalOutside(event)"
+    >
+      <div class="modal" id="modalBox">
+        <h3>
+          <i
+            class="fa-regular fa-calendar-plus"
+            style="color: var(--accent); margin-right: 8px"
+          ></i
+          >Add New Event
+        </h3>
+        <p class="modal-sub">
+          Fill in the details below. Your event will appear on the calendar
+          immediately.
+        </p>
+
+        <div class="m-form-group">
+          <label>I am adding this event as a:</label>
+          <div class="role-selector">
+            <label
+              class="role-opt selected"
+              id="roleStudent"
+              onclick="selectRole('student')"
+            >
+              <div class="role-icon">🎓</div>
+              <div class="role-lbl">Student</div>
+            </label>
+            <label
+              class="role-opt"
+              id="roleTeacher"
+              onclick="selectRole('teacher')"
+            >
+              <div class="role-icon">👨‍🏫</div>
+              <div class="role-lbl">Teacher</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="m-form-group">
+          <label>Your Name *</label>
+          <input
+            type="text"
+            id="evName"
+            placeholder="e.g. Muhammad Ali / Dr. Sara Raza"
+          />
+        </div>
+        <div class="m-form-group">
+          <label>Event Title *</label>
+          <input
+            type="text"
+            id="evTitle"
+            placeholder="e.g. Python Study Group Session"
+          />
+        </div>
+        <div class="m-row">
+          <div class="m-form-group">
+            <label>Date *</label>
+            <input type="date" id="evDate" />
+          </div>
+          <div class="m-form-group">
+            <label>Time</label>
+            <input type="time" id="evTime" />
+          </div>
+        </div>
+        <div class="m-form-group">
+          <label>Event Type</label>
+          <select id="evType">
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="webinar">Webinar</option>
+            <option value="career">Career Event</option>
+          </select>
+        </div>
+        <div class="m-form-group">
+          <label>Location / Platform</label>
+          <input
+            type="text"
+            id="evLocation"
+            placeholder="e.g. Room 301, AS Academics / Online (Zoom)"
+          />
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="submitEvent()">
+            <i class="fa-solid fa-check"></i> Add Event
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="./js/global.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/courses-teachers.js"></script>
+    <script src="./js/events.js"></script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
