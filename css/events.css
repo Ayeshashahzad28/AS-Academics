@@ -443,23 +443,198 @@ html[data-theme="dark"] .ev-tag.user-teacher {
   color: var(--text);
 }
 
-/* event response */
-@media (max-width: 900px) {
+/* ==========================
+   RESPONSIVE EVENTS PAGE
+========================== */
+
+/* Tablet */
+@media (max-width: 992px) {
   .events-wrap {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
+
   .cal-widget {
     position: static;
+    width: 100%;
+  }
+
+  .ev-card {
+    padding: 14px;
   }
 }
-@media (max-width: 600px) {
+
+/* Mobile */
+@media (max-width: 768px) {
+  .events-wrap {
+    gap: 20px;
+  }
+
+  .cal-hdr {
+    padding: 15px;
+  }
+
+  .cal-hdr h3 {
+    font-size: 0.95rem;
+  }
+
+  .cal-grid {
+    padding: 8px;
+  }
+
+  .cal-cell {
+    font-size: 0.75rem;
+  }
+
+  .ev-panel-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .ev-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ev-date-box {
+    width: 70px;
+    min-width: 70px;
+  }
+
+  .ev-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.4;
+  }
+
+  .ev-meta {
+    gap: 8px;
+  }
+
+  .ev-reg {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 24px;
+    border-radius: 14px;
+  }
+
   .m-row {
     grid-template-columns: 1fr;
   }
-  .modal {
-    padding: 26px 20px;
-  }
+
   .modal-actions {
     flex-direction: column;
+  }
+
+  .role-selector {
+    flex-direction: column;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .events-wrap {
+    margin-top: 36px;
+  }
+
+  .cal-hdr {
+    padding: 14px;
+  }
+
+  .cal-nav-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cal-days-row span {
+    font-size: 0.6rem;
+  }
+
+  .cal-cell {
+    font-size: 0.7rem;
+  }
+
+  .ev-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .ev-day {
+    font-size: 1.2rem;
+  }
+
+  .ev-mon {
+    font-size: 0.55rem;
+  }
+
+  .ev-title {
+    font-size: 0.9rem;
+  }
+
+  .ev-meta {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.72rem;
+  }
+
+  .add-event-btn {
+    font-size: 0.78rem;
+    padding: 10px;
+  }
+
+  .modal {
+    padding: 20px 16px;
+  }
+
+  .modal h3 {
+    font-size: 1.15rem;
+  }
+
+  .modal-sub {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 400px) {
+  .cal-grid {
+    gap: 1px;
+    padding: 6px;
+  }
+
+  .cal-cell {
+    font-size: 0.65rem;
+  }
+
+  .ev-date-box {
+    width: 60px;
+    min-width: 60px;
+  }
+
+  .ev-day {
+    font-size: 1rem;
+  }
+
+  .ev-title {
+    font-size: 0.85rem;
+  }
+
+  .ev-reg {
+    font-size: 0.72rem;
+    padding: 8px 12px;
+  }
+
+  .role-opt {
+    padding: 10px;
+  }
+
+  .role-icon {
+    font-size: 1.1rem;
   }
 }
